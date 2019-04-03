@@ -8,10 +8,11 @@ module.exports = {
 	description: 'get coined kid',
 	args: true,
 	usage: '<user>',
-	cooldown: 86400,
+	cooldown: 1,
 	async execute(message, args) {
 		let rUser = message.mentions.members.first();
 		let coinstoadd = 1; 
+		var rUserGM = message.guild.member(message.mentions.members.first())
 
 		MemeCoin.findOneAndUpdate(
 			{userID: rUser.id},
@@ -22,6 +23,7 @@ module.exports = {
 					const newcoin = new MemeCoin({
 						_id: mongoose.Types.ObjectId(),
 						userID: rUser.id,
+						name: rUserGM.displayName,
 						coins: 1
 					})
 					newcoin.save()
@@ -31,7 +33,7 @@ module.exports = {
 					message.reply("Pump the breaks kid, you can't jerk yourself off!");
 				}
 				if(res && rUser.id != message.author.id){
-				message.reply("Swag. " + message.mentions.members.first() + " now has " + (res.coins+1) + " memerinos!");
+				message.reply("Swag. " + rUserGM.displayName + " now has " + (res.coins+1) + " memerinos!");
 				return res.save(MemeCoin);
 				}
 			}
