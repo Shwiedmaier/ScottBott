@@ -23,8 +23,8 @@ module.exports = {
 		})
 
 		report.save()
-		.then(result => console.log(result))
-		.catch(err => console.log(err));
+		//.then(result => console.log(result))
+		//.catch(err => console.log(err));
 
 		message.reply("that report has been saved!");
 	},

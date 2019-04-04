@@ -28,10 +28,10 @@ module.exports = {
 						coins: 1
 					})
 					newcoin.save()
-					message.reply("That kid has 1 memerino now, bitch!");
+					message.reply("They just got there first coin, how sweet.");
 				}
 				if(rUser.id == message.author.id){
-					message.reply("Pump the breaks kid, you can't jerk yourself off!");
+					message.reply("Please no self gradification");
 				}
 				if(res && rUser.id != message.author.id){
 				message.reply("Swag. " + rUserGM.displayName + " now has " + (res.coins+1) + " memerinos!");

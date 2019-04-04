@@ -11,8 +11,13 @@
     "node-fetch": "^2.3.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shwiedmaier/ScottBott.git"
+},
   "license": "ISC",
   "devDependencies": {
     "eslint": "^5.16.0"
