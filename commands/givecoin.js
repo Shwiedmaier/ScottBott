@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const MemeCoin = require("../models/memeCoins.js")
-mongoose.connect('mongodb://localhost/MemeCoins', {useNewUrlParser: true});
+const { mongoURL } = require('../config.json');
+mongoose.connect(mongoURL, {useNewUrlParser: true});
 
 
 module.exports = {

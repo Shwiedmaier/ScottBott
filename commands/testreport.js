@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 const Report = require("../models/report.js")
-mongoose.connect('mongodb://localhost/Reports', {useNewUrlParser: true});
+const { mongoURL } = require('../config.json');
+mongoose.connect(mongoURL, {useNewUrlParser: true});
 
 
 module.exports = {
 	name: 'testreport',
-	description: 'getflamed kid',
+	description: 'test  report',
 	args: true,
 	usage: '<user> <reason>',
 	async execute(message, args) {

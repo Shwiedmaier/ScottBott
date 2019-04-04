@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const MemeCoin = require("../models/memeCoins.js")
-mongoose.connect('mongodb://localhost/MemeCoins', {useNewUrlParser: true});
+const { mongoURL } = require('../config.json');
+mongoose.connect(mongoURL, {useNewUrlParser: true});
 
 
 module.exports = {
@@ -13,7 +14,8 @@ module.exports = {
 			{userID: message.author.id},
 			(err, res) =>{
 				if(err) console.log(err);
-				message.reply("You have " + res.coins + " memerinos!!!!")
+				if(res) message.reply("You have " + res.coins + " memerinos!!!!")
+				if(!res) message.reply("You have no memerinos!!!!")
 			}
 			);
 
